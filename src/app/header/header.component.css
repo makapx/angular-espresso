@@ -1,0 +1,29 @@
+.header {
+  background-color: var(--primary);
+  color: var(--light);
+  padding: 1rem;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--light);
+
+    :first-child {
+      display: flex;
+      gap: 1rem;
+
+      a {
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+      }
+
+      a:hover {
+        color: var(--light);
+        border-bottom: 2px solid var(--light);
+        cursor: pointer;
+      }
+    }
+  }
+}
