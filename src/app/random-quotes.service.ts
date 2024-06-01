@@ -16,9 +16,11 @@ export class RandomQuotesService {
    */
   getRandomQuote(): Observable<string> {
     return new Observable((observer: Observer<string>) => {
-      this.http.get('https://api.quotable.io/random').subscribe((response: any) => {
-        observer.next(response.content);
-      });
+      this.http
+        .get('https://api.quotable.io/random')
+        .subscribe((response: any) => {
+          observer.next(response.content);
+        });
     });
   }
 }

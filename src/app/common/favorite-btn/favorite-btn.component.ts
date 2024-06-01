@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './favorite-btn.component.css',
 })
 export class FavoriteBtnComponent {
-  isFavorite: boolean = false;
+  @Input() isFavorite: boolean = false;
   @Output() isFavorite$: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() {}

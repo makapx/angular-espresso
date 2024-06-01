@@ -1,0 +1,19 @@
+<div *ngIf="coffee" class="card" #cardRef>
+  <div class="card-header">
+    <h3>
+      {{ coffee.name ? coffee.name : "No name available" }}
+    </h3>
+    <app-favorite-btn
+      [isFavorite]="coffee.isFavorite"
+      class="favorite-component"
+      (isFavorite$)="setFavorite($event, cardRef)"
+    ></app-favorite-btn>
+    <hr />
+  </div>
+  <div class="card-body">
+    <figure *ngIf="coffee.imageUrl" class="card-image">
+      <img [src]="coffee.imageUrl" [alt]="coffee.name" [title]="coffee.name" />
+    </figure>
+    {{ coffee.description ? coffee.description : "No description available" }}
+  </div>
+</div>
