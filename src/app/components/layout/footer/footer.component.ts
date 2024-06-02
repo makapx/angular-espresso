@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RandomQuotesService } from '../../random-quotes.service';
+import { RandomQuotesService } from '../../../random-quotes.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 

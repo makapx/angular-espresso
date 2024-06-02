@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeaderComponent } from './header.component';
-import { InfoService } from '../../info.service';
+import { InfoService } from '../../../info.service';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;

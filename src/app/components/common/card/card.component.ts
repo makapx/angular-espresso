@@ -2,8 +2,8 @@ import { Component, Input, ViewChild, ElementRef } from '@angular/core';
 import { FavoriteBtnComponent } from '../favorite-btn/favorite-btn.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Coffee } from '../../types/coffee';
-import { CoffeeProviderService } from '../../coffee-provider.service';
+import { Coffee } from '../../../types/coffee';
+import { CoffeeProviderService } from '../../../coffee-provider.service';
 
 @Component({
   selector: 'app-card',

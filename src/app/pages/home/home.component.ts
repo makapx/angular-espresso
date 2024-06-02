@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from '../../common/card/card.component';
+import { CardComponent } from '../../components/common/card/card.component';
 import { CoffeeProviderService } from '../../coffee-provider.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Coffee } from '../../types/coffee';

@@ -1,0 +1,86 @@
+<ng-container *ngIf="isSubmitted; else formTemplate">
+  <div class="alert alert-success" role="alert">
+    Coffee submitted successfully!
+  </div>
+</ng-container>
+<ng-template #formTemplate>
+  <form [formGroup]="coffeeForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Enter coffee name"
+        formControlName="name"
+      />
+      <div
+        *ngIf="
+          coffeeForm.get('name')?.invalid && coffeeForm.get('name')?.touched
+        "
+      >
+        <small class="text-danger">Name is required</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        class="form-control"
+        id="description"
+        rows="3"
+        placeholder="Enter coffee description"
+        formControlName="description"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input
+        type="number"
+        class="form-control"
+        id="price"
+        placeholder="Enter coffee price"
+        formControlName="price"
+      />
+      <div
+        *ngIf="
+          coffeeForm.get('price')?.invalid && coffeeForm.get('price')?.touched
+        "
+      >
+        <small class="text-danger">
+          <ng-container
+            *ngIf="coffeeForm.get('price') && coffeeForm.get('price')?.errors?.['required']"
+          >
+            Price is required</ng-container
+          >
+          <ng-container
+            *ngIf="coffeeForm.get('price') && coffeeForm.get('price')?.errors?.['min']"
+          >
+            Price must be greater than 0</ng-container
+          >
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="origin">Origin</label>
+      <select class="form-control" formControlName="origin">
+        <option value="" disabled selected>Select coffee origin</option>
+        <option
+          *ngFor="let origin of coffeeOrigins | keyvalue"
+          [value]="origin"
+        >
+          {{ origin.value }}
+        </option>
+      </select>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!coffeeForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+</ng-template>

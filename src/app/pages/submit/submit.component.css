@@ -1,0 +1,24 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  p {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    padding: 5rem;
+  }
+
+  /** This is an example of ng-deep pseudo-class selector */
+  /** It is used to style the footer component from the submit page */
+  ::ng-deep footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}

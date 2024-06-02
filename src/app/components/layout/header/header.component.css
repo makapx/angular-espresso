@@ -17,6 +17,7 @@
       a {
         text-decoration: none;
         border-bottom: 2px solid transparent;
+        color: var(--light);
       }
 
       a:hover {
